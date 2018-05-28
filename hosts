@@ -1,0 +1,21 @@
+[spine]
+as5712-1 ansible_host=192.168.200.159 ansible_user=root ansible_connection=ssh
+as5712-2 ansible_host=192.168.200.160 ansible_user=root ansible_connection=ssh
+
+[leaf]
+as4610-1 ansible_host=192.168.200.161 ansible_user=root ansible_connection=ssh
+as4610-2 ansible_host=192.168.200.162 ansible_user=root ansible_connection=ssh
+as4610-3 ansible_host=192.168.200.163 ansible_user=root ansible_connection=ssh
+as4610-4 ansible_host=192.168.200.164 ansible_user=root ansible_connection=ssh
+
+[switches:children]
+spine
+leaf
+
+[onos]
+onos-1 ansible_host=192.168.200.66 ansible_user=root ansible_connection=ssh
+onos-2 ansible_host=192.168.200.61 ansible_user=root ansible_connection=ssh
+onos-3 ansible_host=192.168.200.62 ansible_user=root ansible_connection=ssh
+
+[onos-build]
+onos-build ansible_host=192.168.200.57 ansible_user=root ansible_connection=ssh
